@@ -86,7 +86,11 @@ namespace own
 		~timer()
 		{	if (!m_clock_name.empty())
 				m_clock_name += " ";
-			std::cout << "Clock " << m_clock_name << "Time Elapsed: " << std::chrono::duration_cast<std::chrono::milliseconds>(clock_type::now() - m_start_time) << std::endl;
+			std::cout << "Clock "
+                      << m_clock_name
+                      << "Time Elapsed: "
+                      << std::chrono::duration_cast<std::chrono::milliseconds>(clock_type::now() - m_start_time)
+                      << std::endl;
 		}
 	private:
 		std::string m_clock_name{};
